@@ -30,7 +30,8 @@ input sel;
 output [15:0]out;
 
 //wires
-wire s0, s1, s2;
+wire s0;
+wire [15:0] s1, s2;
 
 //b sel
 not(s0, sel);
