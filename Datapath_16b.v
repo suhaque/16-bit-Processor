@@ -57,10 +57,10 @@ Instruction_Mem im(PC, instruction);
 Control_Unit cu(instruction[15:12], Control);
 
 //regdest mux 
-MUX_4b_2to1 regdest(instruction[7:4],instruction[3:0], Control[10], Caddr); 
+MUX_4b_2to1 regdest(instruction[7:4],instruction[3:0], Control[9], Caddr); 
 
 //regfile Reg_File_16b(A,B,C,Aaddr,Baddr,Caddr,Load,Clear,Clk);
-Reg_File16b regfile(A,B,C, instruction[11:8], instruction[7:4],Caddr,Control[6], 1'b0,clk);
+Reg_File16b regfile(A,B,C, instruction[11:8], instruction[7:4],Caddr,Control[7], Control[6],clk);
 
 //Sign_Extend(In,Out);
 Sign_Extend lW (instruction[3:0], LW);
